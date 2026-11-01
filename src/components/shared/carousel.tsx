@@ -1,11 +1,26 @@
 "use client";
 
-import { useRef } from "react";
+import { Children, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import type { Hospital } from "@/types/hospital";
-import { HospitalCard } from "./hospital-card";
 
-export function HospitalCarousel({ hospitals }: { hospitals: Hospital[] }) {
+const COLUMN_CLASSES = {
+  3: "lg:basis-[calc((100%-48px)/3)]",
+  4: "lg:basis-[calc((100%-72px)/4)]",
+} as const;
+
+type CarouselProps = {
+  children: React.ReactNode;
+  columns?: keyof typeof COLUMN_CLASSES;
+  prevLabel?: string;
+  nextLabel?: string;
+};
+
+export function Carousel({
+  children,
+  columns = 4,
+  prevLabel = "আগেরটি",
+  nextLabel = "পরেরটি",
+}: CarouselProps) {
   const trackRef = useRef<HTMLUListElement>(null);
 
   function scrollByCard(direction: 1 | -1) {
@@ -24,12 +39,11 @@ export function HospitalCarousel({ hospitals }: { hospitals: Hospital[] }) {
         ref={trackRef}
         className="flex snap-x snap-mandatory gap-6 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
-        {hospitals.map((hospital) => (
+        {Children.map(children, (child) => (
           <li
-            key={hospital.slug}
-            className="flex shrink-0 basis-full snap-start sm:basis-[calc((100%-24px)/2)] lg:basis-[calc((100%-72px)/4)]"
+            className={`flex shrink-0 basis-full snap-start sm:basis-[calc((100%-24px)/2)] ${COLUMN_CLASSES[columns]}`}
           >
-            <HospitalCard hospital={hospital} />
+            {child}
           </li>
         ))}
       </ul>
@@ -38,7 +52,7 @@ export function HospitalCarousel({ hospitals }: { hospitals: Hospital[] }) {
         <button
           type="button"
           onClick={() => scrollByCard(-1)}
-          aria-label="আগের হাসপাতাল"
+          aria-label={prevLabel}
           className="flex size-11 items-center justify-center rounded-full border border-line bg-white text-brand-700 transition-colors hover:border-brand-700"
         >
           <ChevronLeft size={18} strokeWidth={2.5} />
@@ -46,7 +60,7 @@ export function HospitalCarousel({ hospitals }: { hospitals: Hospital[] }) {
         <button
           type="button"
           onClick={() => scrollByCard(1)}
-          aria-label="পরের হাসপাতাল"
+          aria-label={nextLabel}
           className="flex size-11 items-center justify-center rounded-full border border-line bg-white text-brand-700 transition-colors hover:border-brand-700"
         >
           <ChevronRight size={18} strokeWidth={2.5} />

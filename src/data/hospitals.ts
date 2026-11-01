@@ -29,5 +29,4 @@ export const HOSPITALS: Hospital[] = [
     type: "হাসপাতাল",
     image: "/images/hospitals/rajshahi-general.jpg",
   },
-  
 ];

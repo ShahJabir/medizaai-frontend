@@ -1,7 +1,8 @@
-import Link from "next/link";
 import { Container } from "@/components/shared/container";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { HospitalCarousel } from "@/components/hospitals/hospital-carousel";
+import { SeeAllLink } from "@/components/shared/see-all-link";
+import { Carousel } from "@/components/shared/carousel";
+import { HospitalCard } from "@/components/hospitals/hospital-card";
 import { HOSPITALS } from "@/data/hospitals";
 
 export function PopularHospitals() {
@@ -12,15 +13,18 @@ export function PopularHospitals() {
           title="জনপ্রিয় হাসপাতাল"
           subtitle="রাজশাহীর ১৩টি হাসপাতাল ও ডায়াগনস্টিক"
         >
-          <Link
-            href="/hospitals"
-            className="text-[15px] leading-[22px] font-semibold whitespace-nowrap text-brand-700 hover:underline"
-          >
-            সব দেখুন
-          </Link>
+          <SeeAllLink href="/hospitals" />
         </SectionHeading>
 
-        <HospitalCarousel hospitals={HOSPITALS} />
+        <Carousel
+          columns={4}
+          prevLabel="আগের হাসপাতাল"
+          nextLabel="পরের হাসপাতাল"
+        >
+          {HOSPITALS.map((hospital) => (
+            <HospitalCard key={hospital.slug} hospital={hospital} />
+          ))}
+        </Carousel>
       </Container>
     </section>
   );
