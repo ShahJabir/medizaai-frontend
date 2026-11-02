@@ -5,5 +5,6 @@ export type Doctor = {
   specialty: string;
   fee: number;
   videoAvailable: boolean;
+  experienceYears?: number;
   image: string;
 };

@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { Container } from "@/components/shared/container";
-import { CONTACT, NAV_LINKS } from "@/lib/constants";
+import { NavLinks } from "@/components/layout/nav-links";
+import { CONTACT } from "@/lib/constants";
 
 export function Navbar() {
   return (
@@ -15,17 +17,9 @@ export function Navbar() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-base leading-6 font-medium whitespace-nowrap text-ink-2 transition-colors hover:text-brand-700"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <Suspense fallback={null}>
+          <NavLinks />
+        </Suspense>
 
         <div className="flex items-center gap-3">
           <Link

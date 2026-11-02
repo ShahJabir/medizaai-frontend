@@ -6,19 +6,22 @@ import { PopularDoctors } from "@/components/home/popular-doctors";
 import { OurGuides } from "@/components/home/our-guides";
 import { HowItWorks } from "@/components/home/how-it-works";
 import { TryNow } from "@/components/home/try-now";
-
+import { Faq } from "@/components/home/faq";
+import { EmergencyStrip } from "@/components/layout/emergency-strip";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-        <WhyMedizaai />
-        <ChooseYourNeed />
-        <PopularHospitals />
-        <PopularDoctors />
-        <OurGuides />
-        <HowItWorks />
-        <TryNow />
+      <WhyMedizaai />
+      <ChooseYourNeed />
+      <PopularHospitals />
+      <PopularDoctors />
+      <OurGuides />
+      <HowItWorks />
+      <TryNow />
+      <Faq />
+      <EmergencyStrip />
     </>
   );
 }

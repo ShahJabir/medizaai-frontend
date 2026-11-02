@@ -1,5 +1,6 @@
 import { TopBar } from "@/components/layout/top-bar";
 import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 
 export default function SiteLayout({
   children,
@@ -11,7 +12,7 @@ export default function SiteLayout({
       <TopBar />
       <Navbar />
       <main>{children}</main>
-      {/* Footer + Emergency strip pore ekhane boshbe */}
+      <Footer />
     </>
   );
 }
