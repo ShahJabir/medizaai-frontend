@@ -22,3 +22,9 @@ export const doctorBookingSchema = z.object({
 });
 
 export type DoctorBookingValues = z.infer<typeof doctorBookingSchema>;
+
+export const guideBookingSchema = doctorBookingSchema.extend({
+  hospital: z.string().min(1, "হাসপাতাল বেছে নিন"),
+});
+
+export type GuideBookingValues = z.infer<typeof guideBookingSchema>;
