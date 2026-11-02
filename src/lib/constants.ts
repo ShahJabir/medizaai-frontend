@@ -30,9 +30,13 @@ export const FOOTER_COMPANY_LINKS = [
   { label: "শর্তাবলী", href: "/terms" },
 ];
 
-// TODO: Facebook ar YouTube-er asol link boshan
 export const SOCIAL_LINKS = [
   { label: "Facebook", href: "#" },
   { label: "YouTube", href: "#" },
   { label: "WhatsApp", href: CONTACT.whatsappLink },
 ];
+
+export const MEDICINE_ORDER = {
+  deliveryFee: 30,
+  minOrder: 100,
+};
