@@ -35,6 +35,21 @@ export async function getDoctors(
   return result;
 }
 
+export async function getDoctorBySlug(slug: string): Promise<Doctor | null> {
+  return DOCTORS.find((doctor) => doctor.slug === slug) ?? null;
+}
+
+export async function getOtherDoctors(
+  slug: string,
+  count: number,
+): Promise<Doctor[]> {
+  return DOCTORS.filter((doctor) => doctor.slug !== slug).slice(0, count);
+}
+
+export function getAllDoctorSlugs(): string[] {
+  return DOCTORS.map((doctor) => doctor.slug);
+}
+
 export function getSpecialties(): string[] {
   return [...new Set(DOCTORS.map((doctor) => doctor.specialty))];
 }
