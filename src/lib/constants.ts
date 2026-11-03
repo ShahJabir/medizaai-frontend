@@ -48,3 +48,5 @@ export const MEDICINE_ORDER = {
   deliveryFee: 30,
   minOrder: 100,
 };
+
+export const MOCK_OTP_CODE = "1234";
