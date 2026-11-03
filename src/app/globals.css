@@ -14,6 +14,8 @@
   --color-surface: #ffffff;
   --color-mint: #e8fffd;
   --color-cream: #fffefb;
+  --color-success: #1f9d55;
+  --color-success-100: #e0f3e8;
 }
 
 @theme inline {
