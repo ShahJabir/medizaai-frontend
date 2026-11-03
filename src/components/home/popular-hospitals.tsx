@@ -3,7 +3,7 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { SeeAllLink } from "@/components/shared/see-all-link";
 import { Carousel } from "@/components/shared/carousel";
 import { HospitalCard } from "@/components/hospitals/hospital-card";
-import { HOSPITALS } from "@/data/hospitals";
+import { POPULAR_HOSPITALS } from "@/data/hospitals";
 
 export function PopularHospitals() {
   return (
@@ -21,7 +21,7 @@ export function PopularHospitals() {
           prevLabel="আগের হাসপাতাল"
           nextLabel="পরের হাসপাতাল"
         >
-          {HOSPITALS.map((hospital) => (
+          {POPULAR_HOSPITALS.map((hospital) => (
             <HospitalCard key={hospital.slug} hospital={hospital} />
           ))}
         </Carousel>
