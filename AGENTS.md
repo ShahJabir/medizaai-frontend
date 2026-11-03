@@ -27,8 +27,7 @@ bun add <pkg>    # add dependency (bun add -d for dev)
 
 ## Design source of truth
 
-- Figma file key: `YK4ukzFYLOXwEu8vls0X1N` (desktop designs, 1440px)
-- Use the Figma MCP (`get_design_context`, `get_screenshot`) with the node IDs below before building a page. Match the design; do not invent new layouts.
+
 - Mobile (375px) designs do not exist yet. Build responsive mobile-first with sensible stacking, and keep desktop pixel-close to Figma.
 
 | Page | Route | Figma node |
