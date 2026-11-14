@@ -7,7 +7,7 @@ import { GUIDES } from "@/data/guides";
 
 export function OurGuides() {
   return (
-    <section className="bg-gradient-to-b from-mint to-cream py-16 md:py-[100px]">
+    <section className="hidden bg-gradient-to-b from-mint to-cream py-16 md:block md:py-[100px]">
       <Container className="flex flex-col gap-10 md:gap-[60px]">
         <SectionHeading
           title="আমাদের গাইড"

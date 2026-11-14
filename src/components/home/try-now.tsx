@@ -29,7 +29,7 @@ const ACTIONS = [
 
 export function TryNow() {
   return (
-    <section className="bg-brand-900 py-12 md:py-[100px]">
+    <section className="hidden bg-brand-900 py-12 md:block md:py-[100px]">
       <Container className="flex flex-col gap-10 md:gap-[60px]">
         <SectionHeading title="আজই শুরু করুন" light />
 

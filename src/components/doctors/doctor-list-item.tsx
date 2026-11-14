@@ -10,7 +10,7 @@ export function DoctorListItem({ doctor }: { doctor: Doctor }) {
 
   return (
     <article className="flex flex-col gap-5 rounded-[12px] border border-line bg-surface p-5 sm:flex-row sm:items-center">
-      <div className="relative size-28 shrink-0 overflow-hidden rounded-full bg-ph">
+      <div className="relative size-[72px] shrink-0 overflow-hidden rounded-full bg-ph md:size-28">
         <Image
           src={doctor.image}
           alt={doctor.name}

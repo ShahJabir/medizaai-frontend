@@ -46,7 +46,7 @@ export async function MedicinesBrowser({
             />
 
             {medicines.length > 0 ? (
-              <ul className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+              <ul className="grid grid-cols-2 gap-3 sm:gap-5 xl:grid-cols-3">
                 {medicines.map((medicine) => (
                   <li key={medicine.slug} className="flex">
                     <MedicineCard medicine={medicine} />
